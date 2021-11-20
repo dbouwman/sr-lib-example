@@ -30,17 +30,57 @@ Steps:
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     "@semantic-release/npm",
-    [
-      "@semantic-release/git",
-      {
-        "assets": ["CHANGELOG.md"]
-      }
-    ]
+    "@semantic-release/git"
   ]
 }
 ```
 
 - manually added `.github/workflows/release.yml`
+
+```yml
+name: Release
+on:
+  push:
+    branches:
+      - master
+      - beta
+      - alpha
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci
+      # START: Change to your normal CI tests/linting etc
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test
+
+      - name: Build
+        run: npm run build
+      # END
+
+      # SEMANTIC-RELEASE
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
+```
 
 ## Initial Release
 
