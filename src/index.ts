@@ -4,3 +4,7 @@ export const sum = (a: number, b: number, c: number) => {
   }
   return a + b + c;
 };
+
+export const subtract = (a: number, b: number): number => {
+  return a - b;
+};
