@@ -1,0 +1,65 @@
+{
+  "version": "0.0.0-development",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "semantic-release": "semantic-release"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "sr-lib-example",
+  "author": "Dave Bouwman",
+  "module": "dist/sr-lib-example.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/sr-lib-example.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/sr-lib-example.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.1",
+    "@size-limit/preset-small-lib": "^7.0.3",
+    "husky": "^7.0.4",
+    "semantic-release": "^18.0.0",
+    "size-limit": "^7.0.3",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.2"
+  },
+  "volta": {
+    "node": "16.13.0",
+    "npm": "8.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dbouwman/sr-lib-example.git"
+  }
+}
