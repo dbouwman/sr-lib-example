@@ -1,6 +1,9 @@
-export const sum = (a: number, b: number) => {
-  if ('development' === process.env.NODE_ENV) {
-    console.log('boop');
-  }
-  return a + b;
+export const sum = (nums: number[]): number => {
+  return nums.reduce((total: number, n: number) => {
+    return total + n;
+  }, 0);
+};
+
+export const subtract = (a: number, b: number): number => {
+  return a - b;
 };
