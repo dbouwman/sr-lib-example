@@ -2,7 +2,7 @@ import { subtract, sum } from '../src';
 
 describe('sum', () => {
   it('works', () => {
-    expect(sum([1, 1, 2])).toEqual(4);
+    expect(sum([1, 1, 2], 2)).toEqual(8);
   });
 });
 
