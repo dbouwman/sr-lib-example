@@ -1,4 +1,4 @@
-import { mult, subtract, sum } from '../src';
+import { downcase, mult, subtract, sum } from '../src';
 
 describe('sum', () => {
   it('works', () => {
@@ -15,5 +15,11 @@ describe('subtract', () => {
 describe('mult', () => {
   it('works', () => {
     expect(mult(2, 5)).toEqual(10);
+  });
+});
+
+describe('downcase', () => {
+  it('works', () => {
+    expect(downcase('LARRY')).toEqual('larry');
   });
 });

@@ -14,3 +14,7 @@ export const subtract = (a: number, b: number, c: number): number => {
 export const mult = (a: number, b: number): number => {
   return a * b;
 };
+
+export const downcase = (s: string): string => {
+  return s.toLowerCase();
+};
