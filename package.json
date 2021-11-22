@@ -46,6 +46,7 @@
   ],
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "github:semantic-release/git",
     "@size-limit/preset-small-lib": "^7.0.3",
     "husky": "^7.0.4",
     "semantic-release": "^18.0.0",
