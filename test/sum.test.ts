@@ -8,7 +8,7 @@ describe('sum', () => {
 
 describe('subtract', () => {
   it('works', () => {
-    expect(subtract(5, 2)).toEqual(3);
+    expect(subtract(5, 2, 1)).toEqual(2);
   });
 });
 
