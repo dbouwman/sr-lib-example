@@ -1,4 +1,4 @@
-import { subtract, sum } from '../src';
+import { mult, subtract, sum } from '../src';
 
 describe('sum', () => {
   it('works', () => {
@@ -9,5 +9,11 @@ describe('sum', () => {
 describe('subtract', () => {
   it('works', () => {
     expect(subtract(5, 2)).toEqual(3);
+  });
+});
+
+describe('mult', () => {
+  it('works', () => {
+    expect(mult(2, 5)).toEqual(10);
   });
 });

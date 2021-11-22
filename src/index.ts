@@ -10,3 +10,7 @@ export const sum = (nums: number[], factor: number): number => {
 export const subtract = (a: number, b: number): number => {
   return a - b;
 };
+
+export const mult = (a: number, b: number): number => {
+  return a * b;
+};
